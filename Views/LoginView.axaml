@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ClinicApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="ClinicApp.Views.LoginView"
+             x:DataType="vm:LoginViewModel">
+
+  <Design.DataContext>
+    <vm:LoginViewModel />
+  </Design.DataContext>
+
+  <StackPanel Margin="30" Spacing="10">
+    <TextBlock Text="Kullanıcı Adı" />
+    <TextBox Text="{Binding Username}" />
+
+    <TextBlock Text="Şifre" />
+    <TextBox Text="{Binding Password}" PasswordChar="●" />
+
+    <Button Content="Giriş Yap" Command="{Binding LoginCommand}" />
+    <TextBlock Text="{Binding Message}" Foreground="Red" />
+  </StackPanel>
+</UserControl>
